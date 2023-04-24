@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Layout from '../components/layouts/Layout'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import LoginLayout from '../components/LoginLayouts/LoginLayout';
 
 function MyApp ({ Component, pageProps }) {
   const router = useRouter()
@@ -16,7 +18,9 @@ function MyApp ({ Component, pageProps }) {
       </Head>
 
       {router.pathname.toLocaleLowerCase() === '/login' ? (
-        <Component {...pageProps} />
+        <LoginLayout>
+          <Component {...pageProps} />
+        </LoginLayout>
       ) : (
         <Layout>
           <Component {...pageProps} />

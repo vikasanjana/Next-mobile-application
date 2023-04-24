@@ -1,0 +1,31 @@
+body {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    background-color: #fff
+}
+
+body header {
+    max-width: 100%;
+    margin: auto !important;
+}
+
+header {
+    box-shadow: none;
+    background-color: #f8fafe;
+}
+
+.singhead {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+.loginHeaderLink , .loginHeaderHelpDropdown{
+    margin-left: 40px;
+    text-decoration: none;
+    margin-bottom: 0;
+    color: #7782a1;
+    font-weight: 500;
+    font-size: 15px;
+}

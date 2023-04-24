@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-css-tags */
 import Head from 'next/head'
 import React, { useState } from 'react'
 import LoginForm from '../../components/LoginLayouts/components/Form/LoginForm'
-import LoginFromHead from '../../components/LoginLayouts/components/LoginFromHead'
-import LoginLayout from '../../components/LoginLayouts/LoginLayout'
+import style from '../../public/css/LoginPage/index.scss'
 
 const LoginPage = () => {
   // user state hook for username and password
@@ -30,14 +30,19 @@ const LoginPage = () => {
 
   return (
     <>
-    
-      <LoginLayout>
-        <LoginFromHead
-          title={`Let's Get Started`}
-          pera={'Sign in to continue to Florence.'}
+      <Head>
+        <title>Login</title>
+        <link rel='stylesheet' href='/css/LoginPage/header.css' />
+      </Head>
+      <section className='signinpage signinpage-ipad signinpage-new'>
+        <LoginForm
+          method='post'
+          action=''
+          Data={Data}
+          setData={setData}
+          onSignInHandler={onSignInHandler}
         />
-        <LoginForm method='post' action='' Data={Data} setData={setData} onSignInHandler={onSignInHandler} />
-      </LoginLayout>
+      </section>
     </>
   )
 }

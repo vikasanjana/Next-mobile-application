@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
+  <g id="Group_27357" data-name="Group 27357" transform="translate(-1322 -170)">
+    <g id="btn_google_dark_normal" transform="translate(1322.285 170)">
+      <g id="Rectangle_967" data-name="Rectangle 967" transform="translate(-0.285)" fill="#fff" stroke="#e3e6f1" stroke-linejoin="round" stroke-width="1">
+        <rect width="54" height="54" rx="3" stroke="none"/>
+        <rect x="0.5" y="0.5" width="53" height="53" rx="2.5" fill="none"/>
+      </g>
+      <g id="logo_googleg_48dp" transform="translate(15.308 15.308)">
+        <path id="Shape" d="M20.6,9.835a13.889,13.889,0,0,0-.22-2.471H9v4.673h6.5a5.557,5.557,0,0,1-2.411,3.646v3.031H17a11.782,11.782,0,0,0,3.6-8.879Z" transform="translate(3.081 2.521)" fill="#4285f4" fill-rule="evenodd"/>
+        <path id="Shape-2" data-name="Shape" d="M11.753,20.5a11.534,11.534,0,0,0,8-2.927l-3.9-3.031A7.288,7.288,0,0,1,4.993,10.71H.957v3.13a12.076,12.076,0,0,0,10.8,6.656Z" transform="translate(0.328 3.666)" fill="#34a853" fill-rule="evenodd"/>
+        <path id="Shape-3" data-name="Shape" d="M5.321,12.679a7.142,7.142,0,0,1,0-4.591V4.958H1.285a12.1,12.1,0,0,0,0,10.851l4.036-3.13Z" transform="translate(0 1.697)" fill="#fbbc05" fill-rule="evenodd"/>
+        <path id="Shape-4" data-name="Shape" d="M11.753,4.8a6.527,6.527,0,0,1,4.618,1.807l3.465-3.465A11.61,11.61,0,0,0,11.753,0,12.076,12.076,0,0,0,.957,6.655l4.036,3.13A7.2,7.2,0,0,1,11.753,4.8Z" transform="translate(0.328)" fill="#ea4335" fill-rule="evenodd"/>
+        <path id="Shape-5" data-name="Shape" d="M0,0H24.162V24.162H0Z" fill="none" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </g>
+</svg>
