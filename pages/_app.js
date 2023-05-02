@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-css-tags */
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Layout from '../components/layouts/Layout'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginLayout from '../components/LoginLayouts/LoginLayout';
+import 'grapesjs/dist/css/grapes.min.css';
 
 function MyApp ({ Component, pageProps }) {
   const router = useRouter()
@@ -15,6 +17,7 @@ function MyApp ({ Component, pageProps }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='description' content='' />
         <meta name='author' content='' />
+        <link rel="stylesheet" href="/css/style.css"></link>
       </Head>
 
       {router.pathname.toLocaleLowerCase() === '/login' ? (
