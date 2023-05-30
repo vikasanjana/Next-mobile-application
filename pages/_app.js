@@ -5,6 +5,8 @@ import Layout from '../components/layouts/Layout'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginLayout from '../components/LoginLayouts/LoginLayout';
 import 'grapesjs/dist/css/grapes.min.css';
+import '/styles/globals.scss';
+
 
 function MyApp ({ Component, pageProps }) {
   const router = useRouter()

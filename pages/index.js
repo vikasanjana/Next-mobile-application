@@ -1,66 +1,66 @@
-import Head from 'next/head'
-import Image from 'next/legacy/image'
+import React, { useEffect, useRef, useState } from 'react';
+import GrapesJS from 'grapesjs';
+import gjsBasicBlocks from 'grapesjs-blocks-basic';
+import { Container, Navbar } from 'react-bootstrap';
+import Head from 'next/head';
 
-import grapesjs from 'grapesjs'
-import { useEffect } from 'react'
-import Container from 'react-bootstrap/esm/Container'
+function Editor() {
+  const [editor, setEditor] = useState(null);
+  const customDivRef = useRef(null);
 
-export default function Home () {
   useEffect(() => {
-    const editor = grapesjs.init({
-      // Indicate where to init the editor. You can also pass an HTMLElement
-      container: '#gjs',
-      // Get the content for the canvas directly from the element
-      // As an alternative we could use: `components: '<h1>Hello World Component!</h1>'`,
+    const customDiv = customDivRef.current;
+    if (!customDiv) {
+      console.error("Custom div element not found.");
+      return;
+    }
+
+    const editorInstance = GrapesJS.init({
+      container: customDiv,
       fromElement: true,
-      // Size of the editor
-      height: '300px',
-      width: 'auto',
-      // Disable the storage manager for the moment
+      width: "auto",
       storageManager: false,
-      // Avoid any default panel
-      panels: { defaults: [] },
-      // ...
-      blockManager: {
-        appendTo: '#blocks',
-        blocks: [
-          {
-            id: 'section', // id is mandatory
-            label: '<b>Section</b>', // You can use HTML/SVG inside labels
-            attributes: { class: 'gjs-block-section' },
-            content: `<section>
-              <h1>This is a simple title</h1>
-              <div>This is just a Lorem text: Lorem ipsum dolor sit amet</div>
-            </section>`
-          },
-          {
-            id: 'text',
-            label: 'Text',
-            content: '<div data-gjs-type="text">Insert your text here</div>'
-          },
-          {
-            id: 'image',
-            label: 'Image',
-            // Select the component once it's dropped
-            select: true,
-            // You can pass components as a JSON instead of a simple HTML string,
-            // in this case we also use a defined component type `image`
-            content: { type: 'image' },
-            // This triggers `active` event on dropped components and the `image`
-            // reacts by opening the AssetManager
-            activate: true
-          }
-        ]
+      plugins: [gjsBasicBlocks],
+      pluginsOpts: {
+        gjsBasicBlocks: {},
+      },
+      blockManager : {
+        appendTo : '#blocks'
+      },
+      layerManager : {
+        appendTo : '#layer-container'
+      },
+      styleManager : {
+        appendTo : '#style-container'
+      },
+      panels:{
+        defaults:{}
       }
-    })
-  }, [])
+      
+    });
+
+    setEditor(editorInstance);
+
+    return () => {
+      if (editorInstance) {
+        editorInstance.destroy();
+      }
+    };
+  }, []);
 
   return (
     <>
-      <Container>
-        <div id='gjs'>...</div>
-        <div id='blocks'></div>
-      </Container>
+      <Head>
+        <title>Builder Home Page</title>
+      </Head>
+      <div className="main-content">
+        <Navbar bg="light" expand="lg">
+          <Container fluid>devices basic</Container>
+        </Navbar>
+        <div ref={customDivRef} id="editor"></div>
+      </div>
     </>
-  )
+  );
 }
+
+export default Editor;

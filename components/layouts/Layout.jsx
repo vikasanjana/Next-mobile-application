@@ -6,10 +6,9 @@ import MainSidebar from './components/SideBar/MainSidebar'
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
       <MainSidebar />
       {children}
-      <Footer />
+      {/* <Footer />   */}
     </>
   )
 }
